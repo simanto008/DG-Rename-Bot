@@ -2,7 +2,7 @@ import os, time, asyncio, subprocess, json
 from helper.utils import metadata_text
 
 def change_metadata(input_file, output_file, metadata):
-    author, title, video_title, audio_title, subtitle_title = metadata_text(metadata)
+    author, title, video_title, audio_title, subtitle_title,  = metadata_text(metadata)
     
     # Get the video metadata
     output = subprocess.check_output(['ffprobe', '-v', 'error', '-show_streams', '-print_format', 'json', input_file])
@@ -30,7 +30,7 @@ def change_metadata(input_file, output_file, metadata):
         elif stream['codec_type'] == 'subtitle' and subtitle_title:
             cmd.extend([f'-metadata:s:{stream["index"]}', f'title={subtitle_title}'])
 
-    cmd.extend(['-metadata', f'comment=Added by @Digital_Rename_Bot'])
+    cmd.extend(['-metadata', f'comment=Added by @AniShareDone \n\nSubscribe To @AniShareOn In Telegram For Latest Ongoing Animes \n\nFayoanime.Blogspot.Com For Web Download'])
     cmd.append(output_file)
     print(cmd)
     
