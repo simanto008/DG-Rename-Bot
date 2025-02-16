@@ -30,7 +30,7 @@ def change_metadata(input_file, output_file, metadata):
         elif stream['codec_type'] == 'subtitle' and subtitle_title:
             cmd.extend([f'-metadata:s:{stream["index"]}', f'title={subtitle_title}'])
 
-    cmd.extend(['-metadata', f'comment=Added by @AniShareDone \n\nSubscribe To @AniShareOn In Telegram For Latest Ongoing Animes \n\nFayoanime.Blogspot.Com For Web Download'])
+    cmd.extend(['-metadata', f'comment=Added by @AniShareDone'])
     cmd.append(output_file)
     print(cmd)
     
